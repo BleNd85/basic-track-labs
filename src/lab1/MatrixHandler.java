@@ -4,8 +4,30 @@ import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/**
+ * The {@code MatrixHandler} class provides methods for processing matrix entered by the user,
+ * including transposing, calculating the sum of the maximum values in each row
+ * and printing matrices to the console.
+ */
 public class MatrixHandler {
-
+    /**
+     * Calls all matrix methods:
+     * <ul>
+     *     <li>Reads a matrix from user input.</li>
+     *     <li>Prints the original matrix.</li>
+     *     <li>Transposes the matrix and prints it.</li>
+     *     <li>Calculates and prints the sum of the maximum values in each row of the transposed matrix.</li>
+     * </ul>
+     * <p>
+     * Handles the following exceptions:
+     * *<ul>
+     *     <li>{@code NegativeArraySizeException} if the matrix dimensions are negative.</li>
+     *     <li>{@code InputMismatchException} if the matrix elements are not valid byte values.</li>
+     * </ul>
+     *
+     * @throws NegativeArraySizeException if the user provides negative dimensions for the matrix.
+     * @throws InputMismatchException     if the matrix elements are not valid byte values.
+     */
     public void outputTransposedMatrixAndMaxValueInRowSum() {
         try {
             byte[][] matrix = getMatrix();
@@ -23,6 +45,11 @@ public class MatrixHandler {
         }
     }
 
+    /**
+     * Reads a matrix from user input.
+     *
+     * @return matrix of type {@code byte} representing the matrix.
+     */
     private byte[][] getMatrix() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the size of the matrix, rows and columns must be positive integers.");
@@ -40,6 +67,12 @@ public class MatrixHandler {
         return matrix;
     }
 
+    /**
+     * Transposes the given matrix.
+     *
+     * @param matrix a matrix (2D array) of type {@code byte} representing the matrix that will be transposed.
+     * @return a matrix (2D array) of type {@code byte} representing the transposed matrix.
+     */
     private byte[][] getTransposedMatrix(byte[][] matrix) {
         byte[][] transposedMatrix = new byte[matrix[0].length][matrix.length];
         for (int row = 0; row < transposedMatrix.length; row++) {
@@ -50,6 +83,12 @@ public class MatrixHandler {
         return transposedMatrix;
     }
 
+    /**
+     * Calculates the sum of the maximum values in each row of the matrix.
+     *
+     * @param matrix a 2D array of type {@code byte} representing the matrix in whose rows calculation of maximum value will happen.
+     * @return the sum of the maximum values in each row.
+     */
     private int getSumOfMaxValuesInRow(byte[][] matrix) {
         int sumOfMaxValues = 0;
         for (byte[] row : matrix) {
@@ -64,6 +103,11 @@ public class MatrixHandler {
         return sumOfMaxValues;
     }
 
+    /**
+     * Prints the given matrix to the console.
+     *
+     * @param matrix matrix (2D array) of type {@code byte} representing the matrix to print.
+     */
     private void printMatrix(byte[][] matrix) {
         for (byte[] row : matrix) {
             System.out.println(Arrays.toString(row));
