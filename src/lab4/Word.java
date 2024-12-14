@@ -12,6 +12,9 @@ public class Word implements SentenceMember {
             letters[i] = new Letter(charsArray[i]);
         }
     }
+    public int getLength() {
+        return letters.length;
+    }
 
     @Override
     public String toString() {
