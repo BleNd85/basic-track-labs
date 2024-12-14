@@ -1,14 +1,24 @@
 package lab4;
 
+/**
+ * Represents a punctuation symbol in a sentence.
+ *
+ * <p>The {@code Punctuation} class is responsible for storing a punctuation symbol.
+ */
 public class Punctuation implements SentenceMember {
-    private String symbols;
+    private String symbol;
 
-    public Punctuation(String symbols) {
-        this.symbols = symbols;
+    /**
+     * Constructs a {@code Punctuation} object.
+     *
+     * @param symbol The punctuation symbol.
+     */
+    public Punctuation(String symbol) {
+        this.symbol = symbol;
     }
 
     @Override
     public String toString() {
-        return symbols;
+        return symbol;
     }
 }

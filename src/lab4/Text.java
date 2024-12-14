@@ -1,8 +1,22 @@
 package lab4;
 
+/**
+ * Represents a text composed of multiple sentences.
+ *
+ * <p>The {@code Text} class is responsible for:
+ * <ul>
+ *     <li>Splitting the original text into sentences.</li>
+ *     <li>Replacing words of a specific length in each sentence.</li>
+ * </ul>
+ */
 public class Text {
     private Sentence[] sentences;
 
+    /**
+     * Constructs a {@code Text} object by splitting the given text into sentences.
+     *
+     * @param text The original text.
+     */
     public Text(String text) {
         String normalizedText = text.replaceAll("\\s+", " ").trim();
         String[] splitText = normalizedText.split("(?<=[?.!])");
@@ -12,6 +26,12 @@ public class Text {
         }
     }
 
+    /**
+     * Replaces all words of a specific length in the text with a given replacement string.
+     *
+     * @param length      The length of words to replace.
+     * @param replacement The string to replace matching words with.
+     */
     public void replaceWordsOfLength(int length, String replacement) {
         for (Sentence sentence : sentences) {
             sentence.replaceWordsOfLength(length, replacement);

@@ -1,10 +1,23 @@
 package lab4;
 
-import java.util.Arrays;
 
+/**
+ * Represents a word in a sentence.
+ *
+ * <p>The {@code Word} class is responsible for:
+ * <ul>
+ *     <li>Storing the characters of the word.</li>
+ *     <li>Calculating the length of the word.</li>
+ * </ul>
+ */
 public class Word implements SentenceMember {
     private Letter[] letters;
 
+    /**
+     * Constructs a {@code Word} object from a string.
+     *
+     * @param word The original word.
+     */
     public Word(String word) {
         char[] charsArray = word.toCharArray();
         letters = new Letter[charsArray.length];
@@ -12,6 +25,12 @@ public class Word implements SentenceMember {
             letters[i] = new Letter(charsArray[i]);
         }
     }
+
+    /**
+     * Gets the length of the word.
+     *
+     * @return The length of the word.
+     */
     public int getLength() {
         return letters.length;
     }
