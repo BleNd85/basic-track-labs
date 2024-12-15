@@ -6,8 +6,24 @@ C13 = 2 - Визначити ієрархію електроприладів. У
 Підрахувати споживану потужність. Провести сортування приладів у квартирі на основі потужності.
 Знайти прилад у квартирі, що відповідає заданому діапазону електромагнітного випромінювання.
  */
-
+/**
+ * The {@code Main} class serves as the entry point for the application.
+ * It demonstrates the functionality of managing appliances in an apartment.
+ *
+ * <p>The operations include:
+ * <ul>
+ *     <li>Creating an {@code Apartment} with a set of appliances.</li>
+ *     <li>Sorting appliances by power consumption.</li>
+ *     <li>Calculating total power consumption of turned-on appliances.</li>
+ *     <li>Finding appliances based on a specified range of electromagnetic radiation.</li>
+ * </ul>
+ */
 public class Main {
+    /**
+     * The entry point of the application.
+     *
+     * @param args Command-line arguments (not used).
+     */
     public static void main(String[] args) {
         try {
             Scanner scanner = new Scanner(System.in);
@@ -33,12 +49,6 @@ public class Main {
             apartment1.findByRadiationRange(minRadiation, maxRadiation);
         } catch (Exception e) {
             System.out.println("Введіть коректний діапазон електромагнітного випромінювання");
-        }
-    }
-
-    private static void printAppliances(Appliance[] appliances) {
-        for (Appliance appliance : appliances) {
-            System.out.println(appliance);
         }
     }
 }
