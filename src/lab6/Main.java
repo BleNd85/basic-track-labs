@@ -12,7 +12,16 @@ import java.util.List;
 C2 = 1 - Set
 C3 = 2 - Двозв’язний список
  */
+
+/**
+ * Demonstrates the functionality of the {@link ApplianceSet} class.
+ * Showcases how to create, manipulate, and query custom sets of {@link lab5.Appliance} objects.
+ */
 public class Main {
+    /**
+     * The main entry point for demonstrating the functionality of {@link ApplianceSet}.
+     * @param args the command-line arguments (not used).
+     */
     public static void main(String[] args) {
         Appliance microwave = new KitchenAppliance("Мікрохвильовка", 1500, 2.5);
         Appliance laptop = new Device("Ноутбук", 95, 5.0);
